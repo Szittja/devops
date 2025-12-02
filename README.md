@@ -6,3 +6,9 @@ A projektben:
 - buildelés,
 - dockerizálás,
 - felhő deploy (Render.com).
+
+## Lokális futtatás
+
+### Virtuális környezet létrehozása
+```bash
+python -m venv .venv
