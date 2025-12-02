@@ -61,6 +61,7 @@ Az alkalmazás elérhető:
 
 **http://localhost:8080**
 
+------------------------------------------------------------------------
 
 # Buildelés
 
@@ -83,6 +84,8 @@ csomagokat a `requirements.txt` alapján.
 
 Egy külső felhasználó is gond nélkül végig tudja csinálni.
 
+------------------------------------------------------------------------
+
 # Git használata -- trunk-based development
 
 A projekt trunk-based fejlesztési modellt követ.
@@ -95,3 +98,87 @@ A projekt trunk-based fejlesztési modellt követ.
 ## Változások
 - v1: Alap Hello World
 - v2: Üzenet frissítve feature branch-ből
+
+------------------------------------------------------------------------
+
+## Docker
+
+A projekt tartalmaz egy működő Dockerfile-t.
+
+### Image build
+```bash
+docker build -t hello-devops-python:v1 .
+```
+
+Docker konténer indítása
+
+``` bash
+docker run -p 8080:8080 hello-devops-python:v1
+```
+
+Az alkalmazás elérhető:
+
+http://localhost:8080
+
+------------------------------------------------------------------------
+
+#  Felhő Deploy (CD) -- Render.com
+
+A projekt deploy-ja a **Render.com** free tier felhő szolgáltatásában
+fut.
+
+##  Használt szolgáltató
+
+**Render.com -- Web Service (Docker runtime)**\
+Ingyenes, automatikus deploy GitHub-ból a Dockerfile alapján.
+
+------------------------------------------------------------------------
+
+## Deploy lépések
+
+1.  Lépj be: https://render.com\
+2.  **New → Web Service**\
+3.  Válaszd ki a GitHub repository-t:\
+    Szittja/devops
+4.  Beállítások:
+    -   Runtime: **Docker**
+    -   Branch: **main**
+    -   Root Directory: `.`
+    -   Dockerfile: automatikusan felismerve
+5.  **Create Web Service**
+6.  A Render automatikusan:
+    -   klónozza a repo-t,
+    -   buildeli a Docker image-et,
+    -   futtatja a konténert.
+
+------------------------------------------------------------------------
+
+# Publikus URL
+
+ **https://devops-xayh.onrender.com**
+
+(A free tier idővel alvó módba teheti.)
+
+------------------------------------------------------------------------
+
+# Projekt struktúrája
+
+    devops/
+     ├── app.py
+     ├── requirements.txt
+     ├── build.sh
+     ├── build.ps1
+     ├── Dockerfile
+     ├── README.md
+     ├── .gitignore
+
+------------------------------------------------------------------------
+
+# Felhasznált technológiák
+
+-   Python 3 + Flask
+-   Git + GitHub
+-   Trunk-based development
+-   Docker
+-   Render.com (CD -- Cloud Deploy)
+-   VS Code
