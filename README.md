@@ -170,7 +170,7 @@ Ingyenes, automatikus deploy GitHub-ból a Dockerfile alapján.
      ├── build.ps1
      ├── Dockerfile
      ├── README.md
-     ├── .gitignore
+     └── .gitignore
 
 ------------------------------------------------------------------------
 
