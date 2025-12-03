@@ -161,6 +161,12 @@ Ingyenes, automatikus deploy GitHub-ból a Dockerfile alapján.
 
 ------------------------------------------------------------------------
 
+## Demo Feature Branch
+Ez a branch azért készült, hogy látható legyen egy feature branch a repóban.
+
+
+------------------------------------------------------------------------
+
 # Projekt struktúrája
 
     devops/
